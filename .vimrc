@@ -1,6 +1,15 @@
-" Pathogen
-execute pathogen#infect()
-execute pathogen#helptags()
+" ==  1. IMPORTANT ==
+set nocompatible    " ViM mode
+filetype off
+
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'gmarik/Vundle.vim'
+Plugin 'tpope/vim-fugitive'
+Plugin 'kien/ctrlp.vim'
+
+call vundle#end()
 
 " see :option to read more about all options
 "     :h <option> to read more about a specific option
@@ -9,9 +18,6 @@ filetype plugin indent on
 colors herald
 
 let mapleader=","
-
-" ==  1. IMPORTANT ==
-set nocompatible    " ViM mode
 
 " == 2. Moving around, Searching, and Patterns ==
 set incsearch
