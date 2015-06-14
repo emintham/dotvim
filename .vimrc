@@ -2,17 +2,13 @@
 execute pathogen#infect()
 execute pathogen#helptags()
 
-" -- Go config --
-"  see $GOROOT/misc/vim/readme.txt
-filetype off
-filetype plugin indent off
-set runtimepath+=$GOROOT/misc/vim
-
 " see :option to read more about all options
 "     :h <option> to read more about a specific option
 syntax enable
 filetype plugin indent on
 colors herald
+
+let mapleader=","
 
 " ==  1. IMPORTANT ==
 set nocompatible    " ViM mode
@@ -78,9 +74,14 @@ au FileType java set cino=>4
 " -- Options for Python --
 au FileType python set ts=4
 au FileType python set sw=4
+au FileType python set expandtab
+
+" -- Options for HTML --
+au FileType html set ts=4
+au FileType html set sw=4
+au FileType html set expandtab
 
 nmap <F8> :TagbarToggle<CR>
 
-" -- Options for Go --
-au BufRead,BufNewFile *.go set filetype=go
-autocmd FileType go autocmd BufWritePre <buffer> Fmt
+" -- <Ctrl-l> remove search highlighting --
+nnoremap <silent> <C-l> :nohl<CR><C-l>
