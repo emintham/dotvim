@@ -8,6 +8,8 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'kien/ctrlp.vim'
+Plugin 'ervandew/supertab'
+Plugin 'scrooloose/syntastic'
 
 call vundle#end()
 
@@ -91,3 +93,7 @@ nmap <F8> :TagbarToggle<CR>
 
 " -- <Ctrl-l> remove search highlighting --
 nnoremap <silent> <C-l> :nohl<CR><C-l>
+
+" -- <leader>hl for hlint --
+let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['haskell'] }
+nmap <silent> <leader>hl :SyntasticCheck hlint<CR>
